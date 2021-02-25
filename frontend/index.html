@@ -1,257 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="../index.js"></script>
+		<title>Bitcoin Converter | Team Oasis</title>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+			crossorigin="anonymous"
+		/>
 
-    <title>Bitcoin Converter | Team Oasis</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Candal|Lora"
+			rel="stylesheet"
+		/>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
+		<!-- Bootsrap CDN -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+			integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+			crossorigin="anonymous"
+		/>
 
-     <!-- Bootsrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<!-- Main css -->
+		<link href="assets/css/main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!--Header Area-->
+		<header class="header-area blue-bg-2">
+			<nav class="navbar navbar-expand-lg main-menu">
+				<div class="container-fluid">
+					<a
+						href="index.html"
+						class="navbar-brand"
+						style="color: rgba(255, 255, 255, 0.6)"
+						>Team Oasis</a
+					>
+					<img
+						src="https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/2701173b1b7740f286939659359e225c.png"
+						alt=""
+						srcset=""
+					/>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="menu-toggle"></span>
+					</button>
+					<button onclick="getCoinRate()">Hussein</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav m-auto">
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link"
+									href="#"
+									role="button"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									>Home</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">How it works</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link"
+									href="#"
+									role="button"
+									data-toggle="dropdown"
+									aria-haspopup="true"
+									aria-expanded="false"
+									>Dashboard</a
+								>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+						</ul>
+						<div class="header-btn justify-content-end">
+							<a href="#" class="bttn-small btn-fill">Account Login</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!--/Header Area-->
 
-    <!-- Main css -->
-    <link href="assets/css/main.css" rel="stylesheet">
-</head>
-<body>
+		<!--Hero Area-->
+		<section
+			class="hero-area gradient-overlay"
+			style="background: url('assets/images/1') no-repeat center center"
+		>
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+						<div class="hero-content">
+							<h4><span>new</span> The No 1 Naira to Bitcoin Converter</h4>
+							<h1>Convert in Real Time</h1>
+							<ul>
+								<li>Hello Team Oasis</li>
+								<li>Lorem Ipsum</li>
+								<li>I am tired of lorem ipsum everytime</li>
+								<li>Lol</li>
+							</ul>
+							<div class="hero-btn">
+								<a href="#" class="bttn-mid btn-fill"
+									><i class="ti-crown"></i> Account</a
+								>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-6 col-md-5 col-sm-12">
+						<form action="#" class="hero-form">
+							<h4>Convert Your Bitcoin</h4>
+							<label for="validationTooltipUsername">Currency</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">$</span>
+								</div>
+								<input
+									type="text"
+									class="form-control"
+									value="500"
+									id="validationTooltipUsername"
+									aria-describedby="inputGroupPrepend"
+									required
+								/>
+								<select name="currency" class="custom-select">
+									<option value="">AUD</option>
+									<option value="">EUR</option>
+									<option value="">GBP</option>
+									<option value="">GHS</option>
+									<option value="">USD</option>
+								</select>
+							</div>
+							<label for="validationCustomUsername">Currency Equivalent</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend2"
+										><i class="fab fa-btc"></i
+									></span>
+								</div>
+								<input
+									type="text"
+									class="form-control"
+									value="0.00"
+									id="validationCustomUsername"
+									aria-describedby="inputGroupPrepend2"
+									required
+								/>
+								<select name="currency" class="custom-select">
+									<option value="">AUD</option>
+									<option value="">EUR</option>
+									<option value="">GBP</option>
+									<option value="">GHS</option>
+									<option value="">USD</option>
+								</select>
+							</div>
+							<label for="validationCustomUsername">Bitcoin Equivalent</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend2"
+										><i class="fab fa-btc"></i
+									></span>
+								</div>
+								<input
+									type="text"
+									class="form-control"
+									value="0.00"
+									id="validationCustomUsername"
+									aria-describedby="inputGroupPrepend2"
+									required
+								/>
+								<select name="currency" class="custom-select">
+									<option value="">ADA</option>
+									<option disabled value="">BNB</option>
+									<option value="">BCH</option>
+									<option value="">BTC</option>
+									<option value="">ETH</option>
+									<option value="">DOGE</option>
+									<option value="">DOT</option>
+								</select>
+							</div>
+							<button class="bttn-mid btn-fill w-100 mt-20">
+								<i class="ti-check"></i>Convert
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--//HERO AREA-->
 
+		<!-- TABLE AREA-->
+		<section class="section-padding blue-bg">
+			<div class="container">
+				<table class="table table-bordered table-hover table-back">
+					<div class="section-title text-center">
+						<h4>
+							<span>Top</span>Stay Updated With Current Global Market Rates
+						</h4>
+					</div>
+					<thead style="color: rgba(255, 255, 255, 0.6)">
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Price</th>
+							<th scope="col">Market</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<img src="assets/images/BNB.png" height="35px" width="35px" />
+								BNB
+							</td>
+							<td>$285.55</td>
+							<td><i class="fas fa-chart-line"></i></td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/BTC.png" height="35px" width="35px" />
+								Bitcoin
+							</td>
+							<td>$285.55</td>
+							<td><i class="fas fa-chart-line"></i></td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/ETH.png" height="35px" width="35px" />
+								Ethereum
+							</td>
+							<td>$285.55</td>
+							<td><i class="fas fa-chart-line"></i></td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/DOGE.png" height="35px" width="35px" />
+								Dogecoin
+							</td>
+							<td>$285.55</td>
+							<td><i class="fas fa-chart-line"></i></td>
+						</tr>
+						<tr>
+							<td>
+								<img src="assets/images/DOT.png" height="35px" width="35px" />
+								Polkadot
+							</td>
+							<td>$285.55</td>
+							<td><i class="fas fa-chart-line"></i></td>
+						</tr>
+						<tr>
+							<td>
+								<img
+									src="https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/2701173b1b7740f286939659359e225c.png"
+									height="35px"
+									width="35px"
+								/>
+								Cardano
+							</td>
+							<td>$285.55</td>
+							<td><i class="fas fa-chart-line"></i></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<!--//TABLE AREA-->
 
-    <!--Header Area-->
-    <header class="header-area blue-bg-2">
-        <nav class="navbar navbar-expand-lg main-menu">
-            <div class="container-fluid">
+		<section style="background: #022c43; padding: 40px"></section>
 
-                <a href="index.html" class="navbar-brand" style="color: rgba(255, 255, 255, 0.6);">Team Oasis</a>
+		<!--Newslatter-->
+		<section class="section-padding blue-bg">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+						<div class="call-to-action centered">
+							<div class="section-title">
+								<h4><span>Top</span>Stay Up to Date</h4>
+							</div>
+							<div class="row justify-content-center">
+								<div class="col-xl-6 col-lg-6 col-sm-12">
+									<div class="newslatter">
+										<form action="#">
+											<input
+												type="email"
+												placeholder="Email Address"
+												required
+											/>
+											<button type="submit">Subscribe</button>
+										</form>
+										<div class="social">
+											<a href=""><i class="fa fa-facebook-square"></i></a>
+											<a href=""><i class="fa fa-instagram"></i></a>
+											<a href=""><i class="fa fa-twitter"></i></a>
+											<a href=""><i class="fa fa-pinterest"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/Newslatter-->
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="menu-toggle"></span>
-                </button>
+		<!--Footer Area-->
+		<footer class="footer-area section-padding-2 blue-bg-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12">
+						<div class="footer-logo">
+							<a href=""><img src="assets/images/logo-2.png" alt="" /></a>
+						</div>
+					</div>
+					<div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-12">
+						<div class="footer-nav">
+							<ul>
+								<li><a href="">About</a></li>
+								<li><a href="">Contact</a></li>
+								<li><a href="">Privacy Policy</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row copyright">
+					<div class="col-xl-6 col-sm-6">
+						<div class="copyright-text">
+							<p>Copyright &copy; Team Oasis 2021. All Rights Reserved.</p>
+						</div>
+					</div>
+					<div class="col-xl-6 col-sm-6">
+						<div class="social">
+							<a href=""><i class="fa fa-facebook"></i></a>
+							<a href=""><i class="fa fa-instagram"></i></a>
+							<a href=""><i class="fa fa-twitter"></i></a>
+							<a href=""><i class="fa fa-pinterest"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--/Footer Area-->
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">How it works</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    </ul>
-                    <div class="header-btn justify-content-end">
-                        <a href="#" class="bttn-small btn-fill">Account Login</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header><!--/Header Area-->
+		<!-- JQuery -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+		<!-- Slick Carousel -->
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+		></script>
 
+		<!-- Bootsrap Scripts -->
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+			integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+			integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+			crossorigin="anonymous"
+		></script>
 
-    <!--Hero Area-->
-    <section class="hero-area gradient-overlay" style="background: url('assets/images/1') no-repeat center center;">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                    <div class="hero-content">
-                        <h4><span>new</span> The No 1 Naira to Bitcoin Converter</h4>
-                        <h1>Convert in Real Time</h1>
-                        <ul>
-                            <li>Hello Team Oasis</li>
-                            <li>Lorem Ipsum</li>
-                            <li>I am tired of lorem ipsum everytime</li>
-                            <li>Lol</li>
-                        </ul>
-                        <div class="hero-btn">
-                            <a href="#" class="bttn-mid btn-fill"><i class="ti-crown"></i> Account</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-5 col-sm-12">
-                    <form action="#" class="hero-form">
-                        <h4>Convert Your Bitcoin</h4>
-                        <label for="validationTooltipUsername">Currency</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupPrepend">$</span>
-                            </div>
-                            <input type="text" class="form-control" value="500" id="validationTooltipUsername" aria-describedby="inputGroupPrepend" required>
-                            <select name="currency" class="custom-select">
-                                <option value="">USD</option>
-                                <option value="">NGN</option>
-                                <option value="">AUD</option>
-                                <option value="">AUD</option>
-                                <option value="">GBP</option>
-                            </select>
-                        </div>
-                        <label for="validationCustomUsername">Bitcoin Equivalent</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="inputGroupPrepend2"><i class="fab fa-btc"></i></span>
-                            </div>
-                            <input type="text" class="form-control" value="0.00" id="validationCustomUsername" aria-describedby="inputGroupPrepend2" required>
-                            <!--<select name="currency" class="custom-select">
-                                <option value="">CAD</option>
-                                <option value="">AUD</option>
-                                <option value="">USD</option>
-                                <option value="">GBP</option>
-                            </select>
-                        -->
-                        </div>
-                        <button class="bttn-mid btn-fill w-100 mt-20"><i class="ti-check"></i>Convert</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//HERO AREA-->
-
-
-    <!-- TABLE AREA-->
-    <section class="section-padding blue-bg">
-        <div class="container">
-            <table class="table table-bordered table-hover table-back">
-                <div class="section-title text-center">
-                    <h4><span>Top</span>Stay Updated With Current Global Market Rates </h4>
-                </div>
-            <thead style="color:rgba(255, 255, 255, 0.6);">
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Market</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> <img src="assets/images/BNB.png" height="35px" width="35px"> BNB</td>
-                    <td> $285.55 </td>
-                    <td><i class="fas fa-chart-line"></i></td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/BTC.png" height="35px" width="35px"> Bitcoin</td>
-                    <td>$285.55</td>
-                    <td><i class="fas fa-chart-line"></i></td>
-                </tr>
-                <tr>
-                    <td> <img src="assets/images/ETH.png" height="35px" width="35px"> Ethereum</td>
-                    <td>$285.55</td>
-                    <td><i class="fas fa-chart-line"></i></td>
-                </tr>
-                <tr>
-                    <td> <img src="assets/images/DOGE.png" height="35px" width="35px"> Dogecoin</td>
-                    <td>$285.55</td>
-                    <td><i class="fas fa-chart-line"></i></td>
-                </tr>
-                <tr>
-                    <td> <img src="assets/images/DOT.png" height="35px" width="35px"> Polkadot</td>
-                    <td>$285.55</td>
-                    <td><i class="fas fa-chart-line"></i></td>
-                </tr>
-                <tr>
-                    <td> <img src="assets/images/ADA.png" height="35px" width="35px"> Cardano</td>
-                    <td>$285.55</td>
-                    <td><i class="fas fa-chart-line"></i></td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
-    </section>
-    <!--//TABLE AREA-->
-
-
-    <section style="background: #022c43; padding: 40px;"></section>
-
-
-    <!--Newslatter-->
-    <section class="section-padding blue-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="call-to-action centered">
-                        <div class="section-title">
-                            <h4><span>Top</span>Stay Up to Date</h4>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-xl-6 col-lg-6 col-sm-12">
-                                <div class="newslatter">
-                                    <form action="#">
-                                        <input type="email" placeholder="Email Address" required>
-                                        <button type="submit">Subscribe</button>
-                                    </form>
-                                    <div class="social">
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-instagram"></i></a>
-                                        <a href=""><i class="fa fa-twitter"></i></a>
-                                        <a href=""><i class="fa fa-pinterest"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!--/Newslatter-->
-
-
-
-
-    <!--Footer Area-->
-    <footer class="footer-area section-padding-2 blue-bg-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12">
-                    <div class="footer-logo">
-                        <a href=""><img src="assets/images/logo-2.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-12">
-                    <div class="footer-nav">
-                        <ul>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Contact</a></li>
-                            <li><a href="">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row copyright">
-                <div class="col-xl-6 col-sm-6">
-                    <div class="copyright-text">
-                        <p>Copyright &copy; Team Oasis 2021. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-sm-6">
-                    <div class="social">
-                        <a href=""><i class="fa fa-facebook"></i></a>
-                        <a href=""><i class="fa fa-instagram"></i></a>
-                        <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer><!--/Footer Area-->
-
-
- <!-- JQuery -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
- <!-- Slick Carousel -->
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
- <!-- Bootsrap Scripts -->
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
- 
- <script src="assets/js/script.js"></script>
-
- 
-</body>
+		<script src="assets/js/script.js"></script>
+	</body>
 </html>
