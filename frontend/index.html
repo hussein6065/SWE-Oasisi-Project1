@@ -4,7 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src="../index.js"></script>
+
+		<script src="https://use.fontawesome.com/b0951faa16.js"></script>
 		<title>Bitcoin Converter | Team Oasis</title>
 		<!-- Font Awesome -->
 		<link
@@ -42,11 +43,7 @@
 						style="color: rgba(255, 255, 255, 0.6)"
 						>Team Oasis</a
 					>
-					<img
-						src="https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/2701173b1b7740f286939659359e225c.png"
-						alt=""
-						srcset=""
-					/>
+
 					<button
 						class="navbar-toggler"
 						type="button"
@@ -58,7 +55,7 @@
 					>
 						<span class="menu-toggle"></span>
 					</button>
-					<button onclick="getCoinRate()">Hussein</button>
+					<!-- <button onclick="getCoinRate()">Hussein</button> -->
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav m-auto">
 							<li class="nav-item dropdown">
@@ -108,12 +105,12 @@
 						<div class="hero-content">
 							<h4><span>new</span> The No 1 Naira to Bitcoin Converter</h4>
 							<h1>Convert in Real Time</h1>
-							<ul>
+							<!-- <ul>
 								<li>Hello Team Oasis</li>
 								<li>Lorem Ipsum</li>
 								<li>I am tired of lorem ipsum everytime</li>
 								<li>Lol</li>
-							</ul>
+							</ul> -->
 							<div class="hero-btn">
 								<a href="#" class="bttn-mid btn-fill"
 									><i class="ti-crown"></i> Account</a
@@ -122,50 +119,51 @@
 						</div>
 					</div>
 					<div class="col-xl-4 col-lg-6 col-md-5 col-sm-12">
-						<form action="#" class="hero-form">
+						<form action="#" class="hero-form" id="conversionForm">
 							<h4>Convert Your Bitcoin</h4>
 							<label for="validationTooltipUsername">Currency</label>
 							<div class="input-group">
 								<div class="input-group-prepend">
-									<span class="input-group-text" id="inputGroupPrepend">$</span>
+									<span class="input-group-text" id="inputGroupPrepend">
+										₦
+									</span>
 								</div>
 								<input
-									type="text"
+									type="number"
 									class="form-control"
-									value="500"
-									id="validationTooltipUsername"
+									value="1"
+									id="currencyInput"
 									aria-describedby="inputGroupPrepend"
 									required
+									onkeyup="convert()"
 								/>
-								<select name="currency" class="custom-select">
-									<option value="">AUD</option>
-									<option value="">EUR</option>
-									<option value="">GBP</option>
-									<option value="">GHS</option>
-									<option value="">USD</option>
-								</select>
 							</div>
 							<label for="validationCustomUsername">Currency Equivalent</label>
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupPrepend2"
-										><i class="fab fa-btc"></i
+										>AU$‎</i
 									></span>
 								</div>
 								<input
-									type="text"
+									type="number"
 									class="form-control"
-									value="0.00"
-									id="validationCustomUsername"
+									value="0"
+									id="currencyOutput"
 									aria-describedby="inputGroupPrepend2"
 									required
+									onkeyup="inverseConvertCur()"
 								/>
-								<select name="currency" class="custom-select">
-									<option value="">AUD</option>
-									<option value="">EUR</option>
-									<option value="">GBP</option>
-									<option value="">GHS</option>
-									<option value="">USD</option>
+								<select
+									name="currency"
+									class="custom-select"
+									onchange="onchangeNGN_CUR()"
+								>
+									<option value="AUD">AUD</option>
+									<option value="EUR">EUR</option>
+									<option value="GBP">GBP</option>
+									<option value="GHS">GHS</option>
+									<option value="USD">USD</option>
 								</select>
 							</div>
 							<label for="validationCustomUsername">Bitcoin Equivalent</label>
@@ -176,26 +174,31 @@
 									></span>
 								</div>
 								<input
-									type="text"
+									type="number"
 									class="form-control"
-									value="0.00"
-									id="validationCustomUsername"
+									value="0"
+									id="cryptoOutput"
+									onkeyup="inverseConvertcrypto()"
 									aria-describedby="inputGroupPrepend2"
 									required
 								/>
-								<select name="currency" class="custom-select">
-									<option value="">ADA</option>
-									<option disabled value="">BNB</option>
-									<option value="">BCH</option>
-									<option value="">BTC</option>
-									<option value="">ETH</option>
-									<option value="">DOGE</option>
-									<option value="">DOT</option>
+								<select
+									name="currency"
+									class="custom-select"
+									onchange="convert()"
+								>
+									<option value="ADA">ADA</option>
+									<option value="BNB">BNB</option>
+									<option value="BCH">BCH</option>
+									<option value="BTC">BTC</option>
+									<option value="ETH">ETH</option>
+									<option value="DOGE">DOGE</option>
+									<option value="DOT">DOT</option>
 								</select>
 							</div>
-							<button class="bttn-mid btn-fill w-100 mt-20">
+							<!-- <button class="bttn-mid btn-fill w-100 mt-20">
 								<i class="ti-check"></i>Convert
-							</button>
+							</button> -->
 						</form>
 					</div>
 				</div>
@@ -220,7 +223,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr id = 'BNB'>
 							<td>
 								<img src="assets/images/BNB.png" height="35px" width="35px" />
 								BNB
@@ -228,7 +231,7 @@
 							<td>$285.55</td>
 							<td><i class="fas fa-chart-line"></i></td>
 						</tr>
-						<tr>
+						<tr id = 'BTC'>
 							<td>
 								<img src="assets/images/BTC.png" height="35px" width="35px" />
 								Bitcoin
@@ -236,7 +239,7 @@
 							<td>$285.55</td>
 							<td><i class="fas fa-chart-line"></i></td>
 						</tr>
-						<tr>
+						<tr id = 'ETH'>
 							<td>
 								<img src="assets/images/ETH.png" height="35px" width="35px" />
 								Ethereum
@@ -244,7 +247,7 @@
 							<td>$285.55</td>
 							<td><i class="fas fa-chart-line"></i></td>
 						</tr>
-						<tr>
+						<tr id = 'DOGE' >
 							<td>
 								<img src="assets/images/DOGE.png" height="35px" width="35px" />
 								Dogecoin
@@ -252,7 +255,7 @@
 							<td>$285.55</td>
 							<td><i class="fas fa-chart-line"></i></td>
 						</tr>
-						<tr>
+						<tr id = 'DOT' >
 							<td>
 								<img src="assets/images/DOT.png" height="35px" width="35px" />
 								Polkadot
@@ -260,7 +263,7 @@
 							<td>$285.55</td>
 							<td><i class="fas fa-chart-line"></i></td>
 						</tr>
-						<tr>
+						<tr id = 'ADA' >
 							<td>
 								<img
 									src="https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/2701173b1b7740f286939659359e225c.png"
@@ -376,5 +379,6 @@
 		></script>
 
 		<script src="assets/js/script.js"></script>
+		<script src="../index.js"></script>
 	</body>
 </html>
